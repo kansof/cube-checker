@@ -23,7 +23,7 @@ data class Block(val str: String) {
     )
 
     fun move(s: String): Boolean {
-        if (map[s] == null || map[s.middle()] == true)
+        if (map[s] == null || (map[s]!! && map[s.middle()]!!))
             return false
 
         val newmap = mutableMapOf<String, Boolean>()
